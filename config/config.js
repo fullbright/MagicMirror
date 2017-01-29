@@ -26,13 +26,13 @@ var config = {
 		},
 		{
 			module: 'calendar',
-			header: 'US Holidays',
+			header: 'France Holidays',
 			position: 'top_left',
 			config: {
 				calendars: [
 					{
 						symbol: 'calendar-check-o ',
-						url: 'webcal://www.calendarlabs.com/templates/ical/US-Holidays.ics'
+						url: 'https://www.mozilla.org/media/caldata/FrenchHolidays.ics'
 					}
 				]
 			}
@@ -66,8 +66,8 @@ var config = {
 			config: {
 				feeds: [
 					{
-						title: "New York Times",
-						url: "http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+						title: "Le Monde",
+						url: "http://www.lemonde.fr/rss/une.xml"
 					}
 				],
 				showSourceTitle: true,
@@ -105,7 +105,7 @@ var config = {
                         line: 117, //28, 'B'
                         stations: 1358,
                         destination: 99,
-                        'label': '117 direction le boulot',
+                        'label': '117 Billotte',
                     },
                     {
                         type: 'bus',
@@ -116,7 +116,6 @@ var config = {
                 ]
             }
         },
-
 	]
 
 };
