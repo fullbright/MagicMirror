@@ -1,0 +1,13 @@
+[Unit]
+Description=Magic Mirror startup service
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/MagicMirror/start.sh
+RemainAfterExit=true
+#ExecStop=/opt/foo/teardown-foo.sh
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target
