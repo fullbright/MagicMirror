@@ -1,13 +1,23 @@
 [Unit]
 Description=Magic Mirror startup service
-After=network.target
+#After=network.target
+Requires=graphical.target
+After=graphical.target
 
 [Service]
-Type=oneshot
+User=fullbright
+StartLimitInterval=5
+StartLimitBurst=10
+Environment=DISPLAY=:0.0
+Environment=XAUTHORITY=/home/fullbright/.Xauthority
+
+#Type=oneshot
+
 ExecStart=/opt/MagicMirror/start.sh
-RemainAfterExit=true
+#RemainAfterExit=true
 #ExecStop=/opt/foo/teardown-foo.sh
 StandardOutput=journal
 
 [Install]
-WantedBy=multi-user.target
+#WantedBy=multi-user.target
+WantedBy=graphical.target

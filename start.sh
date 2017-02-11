@@ -30,5 +30,7 @@ fi
 echo "Starting the magic mirror ..."
 
 npm start
+#/usr/bin/node serveronly
+#DISPLAY=:0 nohup npm start
 
 echo "Done."

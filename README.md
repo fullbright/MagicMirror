@@ -45,6 +45,27 @@ curl -sL https://raw.githubusercontent.com/MichMich/MagicMirror/master/installer
 
 **Note:** if you want to debug on Raspberry Pi you can use `npm start dev` which will start the MagicMirror app with Dev Tools enabled.
 
+### Setup automatic user login
+
+This is required if you need to use a laptop as a magic mirror running ubuntu.
+I tested this with lxde desktop
+
+#### For release 12.04 and on (LightDM)
+
+You will need to create an /etc/lightdm/lightdm.conf with these contents: (do this as root) 
+
+```bash
+[SeatDefaults]
+autologin-user=<YOUR USER>
+autologin-user-timeout=0
+```
+
+More information [here](https://help.ubuntu.com/community/Lubuntu/Boot_Install_Login#For_release_12.04_and_on_.28LightDM.29)
+
+# Check https://bugs.launchpad.net/lightdm/+bug/854261 before setting a timeout
+user-session=Lubuntu
+greeter-session=lightdm-gtk-greeter
+
 ### Server Only
 
 In some cases, you want to start the application without an actual app window. In this case, execute the following command from the MagicMirror folder: `node serveronly`. This will start the server, after which you can open the application in your browser of choice.
