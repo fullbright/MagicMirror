@@ -1,8 +1,8 @@
 [Unit]
 Description=Magic Mirror startup service
-#After=network.target
+After=network.target
 Requires=graphical.target
-After=graphical.target
+#After=graphical.target
 
 [Service]
 User=fullbright
